@@ -12,17 +12,22 @@
     "localtunnel": "lt --port 3000 --subdomain itkoren",
     "share": "npm-run-all --parallel open:src localtunnel",
     "test": "mocha --reporter progress build/testSetup.js \"src/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "generate:mockdata": "babel-node build/generateMockData",
+    "prestart:mockapi": "npm run generate:mockdata",
+    "start:mockapi": "json-server --watch src/api/db.json --port 3001",
+    "start:all": "npm-run-all --parallel start start:mockapi"
   },
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
+    "whatwg-fetch": "latest"
   },
   "devDependencies": {
     "babel-cli": "latest",
     "babel-core": "latest",
     "babel-loader": "latest",
-    "babel-preset-env": "^1.2.1",
+    "babel-preset-env": "latest",
     "babel-preset-latest": "latest",
     "babel-register": "latest",
     "chai": "latest",
