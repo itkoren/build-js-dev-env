@@ -1,3 +1,5 @@
+'use strict';
+
 import 'whatwg-fetch'; // polyfill
 import getBaseUrl from './baseUrl';
 

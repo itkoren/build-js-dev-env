@@ -1,3 +1,5 @@
+'use strict';
+
 import { expect } from 'chai';
 import jsdom from 'jsdom';
 import path from 'path';
